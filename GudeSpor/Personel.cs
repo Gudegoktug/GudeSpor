@@ -29,17 +29,19 @@ namespace GudeSpor
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int secilen;
-            string id;
+            string name,id;
             secilen = dataGridView1.SelectedCells[0].RowIndex;
-            id = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
-
-            txtPName.Text = id;
+            name = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
+            id = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
+            txtPName.Text = name;
+            txtPersonalId.Text = id;
         }
 
         private void btnPKayit_Click(object sender, EventArgs e)
         {
             try
             {
+                //Personel Kayıt
                 SqlCommand kayit = new SqlCommand("insert into Personel (PAd,PSoyad,PBrans,PTel,PAdres) values (@p1,@p2,@p3,@p4,@p5)", bgl.baglanti());
                 kayit.Parameters.AddWithValue("@p1", txtPName.Text);
                 kayit.Parameters.AddWithValue("@p2", txtPSurname.Text);
@@ -65,12 +67,17 @@ namespace GudeSpor
         {
             try
             {
-                SqlCommand kayit = new SqlCommand("delete  Personel where PId = @s1)", bgl.baglanti());
+                //Personel Id'den silme
+                SqlCommand kayit = new SqlCommand("delete Personel where PId=@s1", bgl.baglanti());
+                kayit.Parameters.AddWithValue(("@s1"), (txtPersonalId.Text));
+                kayit.ExecuteNonQuery();
+                this.personelTableAdapter.Fill(this.gudeSpor31DataSet2.Personel);
+                bgl.baglanti().Close();
+                MessageBox.Show("Silindi");
             }
-            catch (Exception)
+            catch 
             {
-
-                throw;
+                MessageBox.Show("HATA!!!");
             }
         }
 

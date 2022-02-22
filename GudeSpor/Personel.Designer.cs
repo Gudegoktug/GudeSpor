@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gudeSpor31DataSet2 = new GudeSpor.GudeSpor31DataSet2();
-            this.personelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personelTableAdapter = new GudeSpor.GudeSpor31DataSet2TableAdapters.PersonelTableAdapter();
             this.pIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pBransDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pTelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pAdresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gudeSpor31DataSet2 = new GudeSpor.GudeSpor31DataSet2();
+            this.personelTableAdapter = new GudeSpor.GudeSpor31DataSet2TableAdapters.PersonelTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,16 +49,18 @@
             this.txtPSurname = new System.Windows.Forms.TextBox();
             this.mskPTel = new System.Windows.Forms.MaskedTextBox();
             this.cmbBrans = new System.Windows.Forms.ComboBox();
-            this.gudeSpor31DataSet3 = new GudeSpor.GudeSpor31DataSet3();
             this.bransBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gudeSpor31DataSet3 = new GudeSpor.GudeSpor31DataSet3();
             this.bransTableAdapter = new GudeSpor.GudeSpor31DataSet3TableAdapters.BransTableAdapter();
             this.btnPKayit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtPersonalId = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bransBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,21 +80,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(800, 150);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-           
-            // 
-            // gudeSpor31DataSet2
-            // 
-            this.gudeSpor31DataSet2.DataSetName = "GudeSpor31DataSet2";
-            this.gudeSpor31DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // personelBindingSource
-            // 
-            this.personelBindingSource.DataMember = "Personel";
-            this.personelBindingSource.DataSource = this.gudeSpor31DataSet2;
-            // 
-            // personelTableAdapter
-            // 
-            this.personelTableAdapter.ClearBeforeFill = true;
             // 
             // pIdDataGridViewTextBoxColumn
             // 
@@ -136,6 +123,20 @@
             this.pAdresDataGridViewTextBoxColumn.DataPropertyName = "PAdres";
             this.pAdresDataGridViewTextBoxColumn.HeaderText = "PAdres";
             this.pAdresDataGridViewTextBoxColumn.Name = "pAdresDataGridViewTextBoxColumn";
+            // 
+            // personelBindingSource
+            // 
+            this.personelBindingSource.DataMember = "Personel";
+            this.personelBindingSource.DataSource = this.gudeSpor31DataSet2;
+            // 
+            // gudeSpor31DataSet2
+            // 
+            this.gudeSpor31DataSet2.DataSetName = "GudeSpor31DataSet2";
+            this.gudeSpor31DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personelTableAdapter
+            // 
+            this.personelTableAdapter.ClearBeforeFill = true;
             // 
             // label1
             // 
@@ -224,15 +225,15 @@
             this.cmbBrans.TabIndex = 9;
             this.cmbBrans.ValueMember = "BransAd";
             // 
-            // gudeSpor31DataSet3
-            // 
-            this.gudeSpor31DataSet3.DataSetName = "GudeSpor31DataSet3";
-            this.gudeSpor31DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bransBindingSource
             // 
             this.bransBindingSource.DataMember = "Brans";
             this.bransBindingSource.DataSource = this.gudeSpor31DataSet3;
+            // 
+            // gudeSpor31DataSet3
+            // 
+            this.gudeSpor31DataSet3.DataSetName = "GudeSpor31DataSet3";
+            this.gudeSpor31DataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bransTableAdapter
             // 
@@ -245,7 +246,7 @@
             this.btnPKayit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPKayit.Location = new System.Drawing.Point(634, 154);
             this.btnPKayit.Name = "btnPKayit";
-            this.btnPKayit.Size = new System.Drawing.Size(97, 77);
+            this.btnPKayit.Size = new System.Drawing.Size(97, 68);
             this.btnPKayit.TabIndex = 10;
             this.btnPKayit.Text = "Kayıt";
             this.btnPKayit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -257,7 +258,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Image = global::GudeSpor.Properties.Resources.pngwing_com__4_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(634, 237);
+            this.button1.Location = new System.Drawing.Point(634, 250);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 77);
             this.button1.TabIndex = 11;
@@ -266,11 +267,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtPersonalId
+            // 
+            this.txtPersonalId.Location = new System.Drawing.Point(659, 228);
+            this.txtPersonalId.Name = "txtPersonalId";
+            this.txtPersonalId.Size = new System.Drawing.Size(72, 20);
+            this.txtPersonalId.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(637, 231);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Id";
+            // 
             // Personel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 332);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtPersonalId);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPKayit);
             this.Controls.Add(this.cmbBrans);
@@ -288,10 +307,10 @@
             this.Text = "Personel";
             this.Load += new System.EventHandler(this.Personel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bransBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gudeSpor31DataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +343,7 @@
         private GudeSpor31DataSet3TableAdapters.BransTableAdapter bransTableAdapter;
         private System.Windows.Forms.Button btnPKayit;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPersonalId;
+        private System.Windows.Forms.Label label6;
     }
 }
